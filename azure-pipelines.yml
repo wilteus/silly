@@ -4,7 +4,7 @@ jobs:
 
   - job: build_macos
     displayName: Build on macOS
-    condition: and(succeeded(), not(variables.task), eq(variables.os, 'Darwin'))
+    condition: eq(variables.os, 'Darwin')
     pool:
       vmImage: macos-10.13
     steps:
@@ -13,7 +13,7 @@ jobs:
 
   - job: build_linux
     displayName: Build on Ubuntu 16.04
-    condition: and(succeeded(), not(variables.task), eq(variables.os, 'Darwin'))
+    condition: eq(variables.os, 'Darwin')
     pool:
       vmImage: ubuntu-16.04
     steps:

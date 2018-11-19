@@ -1,15 +1,18 @@
 steps:
 
 - task: ShellScript@2
-  scriptPath: 'scripts/setup.sh'
-  displayName: 'Set up build environment'
+  inputs:
+    scriptPath: 'scripts/setup.sh'
+   displayName: 'Set up build environment'
 
 - task: ShellScript@2
-  scriptPath: 'scripts/lint.sh'
+  inputs:
+    scriptPath: 'scripts/lint.sh'
   displayName: 'Lint'
 
 - task: ShellScript@2
-  scriptPath: 'scripts/build.sh'
+  inputs:
+    scriptPath: 'scripts/build.sh'
   displayName: 'Build'
 
 - task: PublishTestResults@2

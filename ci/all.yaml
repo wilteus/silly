@@ -1,0 +1,18 @@
+---
+steps:
+
+  - task: ShellScript@2
+    inputs:
+      scriptPath: 'scripts/setup.sh'
+
+  - task: ShellScript@2
+    inputs:
+      scriptPath: 'scripts/lint.sh'
+
+  - task: ShellScript@2
+    inputs:
+      scriptPath: 'scripts/build.sh'
+
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFiles: "**/TEST-*.xml"
